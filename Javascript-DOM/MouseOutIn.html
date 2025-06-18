@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse In/Out</title>
+</head>
+
+<style>
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: lightblue;
+        border: 2px solid blue;
+        text-align: center;
+        line-height: 200px; /* Vertically center text */
+    }
+    #box {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #ffb6b9 0%, #fae3d9 100%);
+    border: 3px solid #ff6f61;
+    border-radius: 16px;
+    text-align: center;
+    line-height: 120px; /* Vertically center text */
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.boxShadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, transform 0.3s;
+}
+#box:hover {
+    background: linear-gradient(135deg, #ff6f61 0%, #ffb6b9 100%);
+    color: #fff;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+</style>
+<body>
+    <div class="container" id="box">ini box</div>
+
+
+    <script>
+        const box = document.getElementById('box');
+
+        box.addEventListener('mouseover', function() {
+            box.innerText = 'Mouse Over';
+            box.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+            box.style.transform = 'scale(1.1)';
+        });
+
+        box.addEventListener('mouseout', function() {
+            box.innerText = 'Mouse Out';
+            box.style.boxShadow = 'none';
+            box.style.transform = 'scale(1)';
+            
+        });
+
+    </script>
+</body>
+</html>

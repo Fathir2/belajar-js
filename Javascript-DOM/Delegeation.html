@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegation element</title>
+</head>
+<body>
+    <ul>
+        <li><a href="http://">Klik A</a></li>
+        <li><a href="http://">Klik B</a></li>
+        <li><a href="http://">Klik C</a></li>
+        <li><a href="http://">Klik D</a></li>
+    </ul>
+
+    <script>
+        const ul = document.querySelector
+        ('ul');
+
+        ul.addEventListener('click', function (event) {
+            // Cek apakah elemen yang diklik adalah <a>
+            if (event.target.tagName === 'A') {
+                event.preventDefault(); // Mencegah aksi default link
+                alert('Link diklik: ' + event.target.textContent);
+            }
+        });
+    </script>
+</body>
+</html>

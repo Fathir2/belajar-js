@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Day 2 DOM Challenge</title>
+</head>
+<body>
+  <h1 id="greeting">Selamat Datang!</h1>
+  <button id="ubah">ubah teks</button>
+  
+
+  <script>
+     const perkenalan = document.getElementById('greeting');
+     const tombol = document.getElementById('ubah');
+
+     tombol.addEventListener("click", function () {
+  const nama = prompt("Siapa namamu?");
+   perkenalan.innerText = `Halo, ${nama}! Semangat terus 💪`;
+
+   if (nama !== null && nama.trim() !== "") {
+  perkenalan.innerText = `Halo, ${nama}! Semangat terus 💪`;
+} else {
+  perkenalan.innerText = "Yah, kamu nggak isi namanya 😅";
+}
+
+});
+
+
+     
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quest Extra</title>
+</head>
+<body>
+  <h2 id="warna">Ubah warna</h1> <!-- tambahin id di sini -->
+  <button id="ubah">Ubah</button>
+
+  <script>
+    const ubahWarna = document.getElementById('warna'); // ambil <h1>
+    const button = document.getElementById('ubah');
+
+    button.addEventListener('click', function () {
+      const warnaBaru = prompt('ubah warna baru');
+
+      if (warnaBaru && warnaBaru.trim() !== "") {
+        ubahWarna.style.color = warnaBaru; // ubah warna tulisan
+      } else {
+        alert('warna nggak boleh kosong nggak boleh kosong!');
+      }
+    });
+  </script>
+</body>
+</html>

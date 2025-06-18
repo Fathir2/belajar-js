@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background</title>
+</head>
+<body>
+   <style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        gap: 10px;
+    }
+
+    .color-input {
+        padding: 8px 12px;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        outline: none;
+    }
+
+    .change-btn {
+        padding: 8px 16px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+
+    .change-btn:hover {
+        background-color: #45a049;
+    }
+</style>
+
+<div class="container">
+    <h3 id="status">Mode: Light</h3>
+    <button id="ubah" class="change-btn">Switch to Dark Mode</button>
+</div>
+
+<script>
+    const ubahWarna = document.getElementById('ubah');
+    const status = document.getElementById('status');
+
+    // Check localStorage on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        applyTheme(isDarkMode);
+    });
+
+    ubahWarna.addEventListener('click', function() {
+        const isDarkMode = document.body.style.backgroundColor === 'black';
+        applyTheme(!isDarkMode);
+        // Save to localStorage
+        localStorage.setItem('darkMode', !isDarkMode);
+    });
+
+    function applyTheme(isDarkMode) {
+        if (isDarkMode) {
+            document.body.style.backgroundColor = 'black';
+            document.body.style.color = 'white';
+            status.textContent = 'Mode: Dark';
+            ubahWarna.textContent = 'Switch to Light Mode';
+        } else {
+            document.body.style.backgroundColor = 'white';
+            document.body.style.color = 'black';
+            status.textContent = 'Mode: Light';
+            ubahWarna.textContent = 'Switch to Dark Mode';
+        }
+    }
+</script>
+        
+</body>
+</html>

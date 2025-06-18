@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Day 9: Input Value</title>
+</head>
+<body>
+    <style>
+      body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 200px;
+        }
+
+        input:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            font-size: 18px;
+            color: #333;
+        }
+
+     .custom-alert {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+        animation: fadeIn 0.3s;
+    }
+
+    .custom-alert p {
+        margin: 0 0 15px 0;
+        color: #333;
+    }
+
+    .custom-alert button {
+        padding: 8px 16px;
+        background: #f44336;
+    }
+
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+        
+    </style><div class="overlay" id="overlay"></div>
+<div class="custom-alert" id="customAlert">
+    <p>Tolong isi nama dulu ya!</p>
+    <button onclick="closeAlert()">OK</button>
+</div>
+
+  <h1>Halo!</h1>
+  <input type="text" id="nama" placeholder="Tulis namamu di sini">
+  <input type="number" id="umur" placeholder="Masukkan umur">
+  <button id="submit">Tampilkan</button>
+  <p id="output"></p>
+
+  <script>
+    const input = document.getElementById("nama");
+    const inputan = document.getElementById("umur");
+    const button = document.getElementById("submit");
+    const output = document.getElementById("output");
+
+     function showAlert() {
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('customAlert').style.display = 'block';
+    }
+
+    function closeAlert() {
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('customAlert').style.display = 'none';
+    }
+
+    button.addEventListener("click", function () {
+      const nama = input.value;
+      const umur = inputan.value;
+      if (nama.trim() !== "") {
+        output.innerText = `Halo, ${nama}!, kamu umurnya ${umur} tahun, ya?`;
+      } else {
+        showAlert();
+      }
+    });
+  </script>
+</body>
+</html>

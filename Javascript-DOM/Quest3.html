@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quest 2</title>
+</head>
+<body>
+  <h1 id="judul">Judul</h1> <!-- tambahin id di sini -->
+  <button id="ubahJudul">Ubah judul</button>
+
+  <script>
+    const judul = document.getElementById('judul'); // ambil <h1>
+    const button = document.getElementById('ubahJudul');
+
+    button.addEventListener('click', function () {
+      const judulBaru = prompt('Isi judul baru');
+
+      if (judulBaru && judulBaru.trim() !== "") {
+        judul.innerText = judulBaru; // langsung ubah dari variabel judul
+        judul.style.color = 'blue'; // ubah warna tulisan
+      } else {
+        alert('Isi sesuatu!');
+      }
+    });
+  </script>
+</body>
+</html>

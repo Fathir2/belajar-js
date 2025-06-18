@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 4 - ClassList</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        
+        }
+
+        .kotak {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .kotak.active {
+            background-color: #4CAF50;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        button {
+            margin: 10px 5px;
+            padding: 8px 16px;
+            background-color: rgb(25, 37, 51);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: rgb(40, 58, 78);
+        }
+
+        button:last-child {
+            background-color: #f44336;
+        }
+
+        button:last-child:hover {
+            background-color: #d32f2f;
+        }
+
+        .dark {
+            background-color: rgb(25, 37, 51);
+            color: white;
+        }
+    </style>
+</head>
+
+<body id="bg">
+
+    <div class="container">
+    
+            <button onclick="tambahClass()">Tambah Class</button>
+            <button onclick="hapusClass()">Hapus Class</button>
+       
+    </div>
+
+    <script>
+        function tambahClass() {
+            document.getElementById("bg").classList.add("dark");
+        }
+
+        function hapusClass() {
+            document.getElementById("bg").classList.remove("dark");
+        }
+
+
+    </script>
+
+</body>
+
+</html>

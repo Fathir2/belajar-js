@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 3 - setAttributes</title>
+</head>
+<body>
+    <style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+     .container-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 30px;
+        padding: 20px;
+    }
+
+    #MyLink {
+        text-decoration: none;
+        color: #4CAF50;
+        font-size: 18px;
+        font-family: Arial, sans-serif;
+        padding: 8px 16px;
+        border: 2px solid #4CAF50;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    #MyLink:hover {
+        background-color: #4CAF50;
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    #ubahLink {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+
+    #ubahLink:hover {
+        background-color: #45a049;
+    }
+
+
+
+    #MyImage {
+        max-width: 300px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+
+    #MyImage:hover {
+        transform: scale(1.05);
+    }
+
+    #ubah {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+
+    #ubah:hover {
+        background-color: #45a049;
+    }
+</style>
+    <div class="container">
+    <img id="MyImage" src="assets/386f0715-def8-4d4b-a2f0-34d696cc8a5c.jpeg" alt="Miku" srcset="">
+    <button id="ubah">Ubah gambar</button>
+</div>
+
+<div class="container-link">
+    <a id="MyLink" href="https://www.youtube.com/">Buka Link nya!</a>
+    <button id="ubahLink">Ubah Link</button>
+</div>
+    <script>
+        const image = document.getElementById('MyImage')
+        const tombol = document.getElementById('ubah'); 
+        const button = document.getElementById('ubahLink'); 
+        const link = document.getElementById('MyLink');
+
+        tombol.addEventListener('click', function () {
+            image.setAttribute("src", "assets/Luka.jpeg");
+        })
+        button.addEventListener('click', function () {
+            link.setAttribute("href", "https://piapro.net/");
+        })
+    </script>
+</body>
+</html>
